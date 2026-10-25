@@ -95,7 +95,14 @@
   footer { text-align: center; color: var(--muted); font-size: 13px; padding: 0 0 40px; }
 
   @media (max-width: 700px) {
-    body { background-position: 100% top; background-size: auto 100vh; }
+    /* На телефоне шары только небольшой полосой сверху, чтобы не перекрывали текст */
+    body { background: #f6e9dc; position: relative; }
+    body::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 320px; z-index: -1;
+      background: url("bg.webp") no-repeat 100% 25% / auto 380px; opacity: .55;
+      -webkit-mask-image: linear-gradient(#000 40%, transparent);
+      mask-image: linear-gradient(#000 40%, transparent);
+    }
   }
   @media (max-width: 520px) {
     .link { width: 100%; }
