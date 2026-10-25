@@ -6,7 +6,8 @@ window.REVIEWS_AUTO = [
     "rating": 5,
     "text": "Все ок",
     "photos": [],
-    "product": ""
+    "product": "",
+    "source": ""
   },
   {
     "name": "Марина",
@@ -16,7 +17,8 @@ window.REVIEWS_AUTO = [
     "photos": [
       "1792926079_1.jpg"
     ],
-    "product": ""
+    "product": "",
+    "source": ""
   },
   {
     "name": "Светлана",
@@ -24,6 +26,18 @@ window.REVIEWS_AUTO = [
     "rating": 5,
     "text": "Очень красиво и со вкусом подобран фонтан шаров!! Доставлен заказ вовремя! Спасибо,рекомендую всем!!",
     "photos": [],
-    "product": ""
+    "product": "",
+    "source": ""
+  },
+  {
+    "name": "Елена",
+    "date": "2026-09-13",
+    "rating": 5,
+    "text": "Быстрее быстрого \nКачественно и недорого\nРекомендую",
+    "photos": [
+      "1792929104_1.jpg"
+    ],
+    "product": "",
+    "source": "Авито"
   }
 ];
