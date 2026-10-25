@@ -203,6 +203,10 @@
     document.getElementById("avgStars").innerHTML = stars(Math.round(avg));
     document.getElementById("count").textContent =
       "на основе " + reviews.length + " " + plural(reviews.length, "отзыва", "отзывов", "отзывов");
+    var external = reviews.filter(function (r) { return r.source; }).length;
+    if (external) {
+      document.getElementById("count").textContent += ", из них " + external + " с других площадок";
+    }
     document.getElementById("summary").hidden = false;
 
     grid.innerHTML = reviews.map(function (r) {
@@ -212,7 +216,7 @@
       return '<article class="card">' +
         '<div class="head"><div class="ava">' + esc(r.name.charAt(0)) + '</div>' +
         '<div><div class="name">' + esc(r.name) + '</div>' +
-        '<div class="date">' + esc(fmtDate(r.date)) + '</div></div></div>' +
+        '<div class="date">' + esc(fmtDate(r.date)) + (r.source ? ' · Отзыв с ' + esc(r.source) : "") + '</div></div></div>' +
         '<div class="stars">' + stars(r.rating) + '</div>' +
         (r.product ? '<div class="product">' + esc(r.product) + '</div>' : "") +
         '<p>' + esc(r.text) + '</p>' +
