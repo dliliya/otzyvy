@@ -79,5 +79,14 @@ window.REVIEWS_AUTO = [
     ],
     "product": "",
     "source": "ВКонтакте"
+  },
+  {
+    "name": "Ильяс У.",
+    "date": "2026-10-27",
+    "rating": 5,
+    "text": "Привезли быстро, в день заказа. Спасибо!",
+    "photos": [],
+    "product": "",
+    "source": ""
   }
 ];
