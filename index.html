@@ -71,7 +71,9 @@
 
   /* Отзывы */
   .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    padding-bottom: 40px; }
+    padding-bottom: 40px; grid-auto-flow: dense; align-items: stretch; }
+  /* Длинные отзывы занимают две колонки (только там, где колонок хватает) */
+  @media (min-width: 640px) { .card.wide { grid-column: span 2; } }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px;
     backdrop-filter: blur(6px); }
   .head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
@@ -213,7 +215,8 @@
       var photos = (r.photos || []).map(function (p) {
         return '<img src="photos/' + esc(p) + '" alt="Фото из отзыва" loading="lazy">';
       }).join("");
-      return '<article class="card">' +
+      var wide = (r.text || "").length > 250;
+      return '<article class="card' + (wide ? ' wide' : '') + '">' +
         '<div class="head"><div class="ava">' + esc(r.name.charAt(0)) + '</div>' +
         '<div><div class="name">' + esc(r.name) + '</div>' +
         '<div class="date">' + esc(fmtDate(r.date)) + (r.source ? ' · Отзыв с ' + esc(r.source) : "") + '</div></div></div>' +
